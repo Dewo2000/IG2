@@ -1,0 +1,15 @@
+﻿  Muñeco.cpp
+E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\OGREsdk\include\OGRE\OgreHardwareBuffer.h(180,45): warning C4251: 'Ogre::HardwareBuffer::mShadowBuffer': class 'std::unique_ptr<Ogre::HardwareBuffer,std::default_delete<Ogre::HardwareBuffer>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Ogre::HardwareBuffer'
+E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\OGREsdk\include\OGRE\OgreHardwareBuffer.h(180): message : vea la declaración de 'std::unique_ptr<Ogre::HardwareBuffer,std::default_delete<Ogre::HardwareBuffer>>'
+E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\OGREsdk\include\OGRE\OgreTimer.h(41,47): warning C4251: 'Ogre::Timer::start': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Ogre::Timer'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\__msvc_chrono.hpp(665): message : vea la declaración de 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>'
+E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\IG2App\Muñeco.cpp(12,53): warning C4305: 'argumento': truncamiento de 'double' a 'Ogre::Real'
+E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\IG2App\Muñeco.cpp(22,54): warning C4305: 'argumento': truncamiento de 'double' a 'Ogre::Real'
+E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\IG2App\Muñeco.cpp(27,62): warning C4244: 'argumento': conversión de 'double' a 'Ogre::Real'; posible pérdida de datos
+  Generando código
+  2 of 893 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+SDL2main.lib(SDL_windows_main.obj) : warning LNK4099: no se encontró PDB 'SDL2main.pdb' con 'SDL2main.lib(SDL_windows_main.obj)' o en 'E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\bin\SDL2main.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  IG2App.vcxproj -> E:\3ºDV-1Sem\IG2\DavidCasianoP1E3\bin\IG2AppRelease.exe
