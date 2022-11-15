@@ -50,7 +50,7 @@ particle_system IG2App/Explode
             direction 1 0 0
             angle 180
             emission_rate 20
-            time_to_live 2
+            time_to_live 5
             velocity_min 10
             velocity_max 10
             repeat_delay 10000
@@ -58,9 +58,7 @@ particle_system IG2App/Explode
         }
         affector ColourFader
         { // a. attributes
-            red 0.2
-            green 0.2
-            blue 0.2
+            
             alpha -0.2
         }
         affector Rotator // the texture
@@ -72,7 +70,7 @@ particle_system IG2App/Explode
         }
         affector Scaler
         { // a. attributes
-            rate 100
+            rate 50
         }
         affector DirectionRandomiser
         { // a. attributes
