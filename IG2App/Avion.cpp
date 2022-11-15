@@ -48,7 +48,7 @@ Avion::Avion(SceneNode* node)
 	Billboard* bb = bbSet->createBillboard(Vector3(0, 0, -150));
 
 	ParticleSystem* pSys = mSM -> createParticleSystem("psSmoke", "IG2App/Smoke");
-	pSys->setEmitting(false);
+	pSys->setEmitting(true);
 	mNode->attachObject(pSys);
 }
 
