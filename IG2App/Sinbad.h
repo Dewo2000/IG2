@@ -14,6 +14,7 @@ public:
 	void danceOrGo();
 	void setStatic() { isStatic = true; }
 	void die();
+	void setRunAnimation();
 protected:
 	//AnimationState* animationState;
 	//virtual bool keyPressed(const OgreBites::KeyboardEvent& evt);
@@ -22,7 +23,8 @@ protected:
 	bool isStatic = false;
 	std::vector<AnimationState*> vAnimations;
 	AnimationStateSet s;
-	long time;
+	long time , diemsgcount;
 	Ogre::Timer* myTimer;
 	Entity* sinbadEnt, *rightSword,*leftSword;
+	bool diemsg=false;
 };

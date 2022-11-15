@@ -48,6 +48,7 @@ Bomba::Bomba(SceneNode* node)
 
 void Bomba::frameRendered(const Ogre::FrameEvent& evt)
 {
+	if(!exploted)
 	animationState->addTime(evt.timeSinceLastFrame);
 }
 
@@ -55,12 +56,16 @@ void Bomba::receiveEvent(MessageType msgType, EntidadIG* entidad)
 {
 	if (msgType == STOP) {
 		animationState->setEnabled(false);
-		//explode();
+	
+	}
+	else if (msgType == SIMBAD_DIE) {
+		explode();
 	}
 }
 
 void Bomba::explode()
 {
+	exploted = true;
 	pSysExplode->setEmitting(true);
 	pSysExplode->getEmitter(0)->setDuration(1);
 	mNode->setVisible(false);

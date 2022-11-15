@@ -11,5 +11,6 @@ public:
 protected:
 	AnimationState* animationState;
 	ParticleSystem* pSysExplode;
+	bool exploted = false;
 };
 
