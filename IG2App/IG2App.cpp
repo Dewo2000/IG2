@@ -57,7 +57,9 @@ bool IG2App::keyPressed(const OgreBites::KeyboardEvent& evt)
 	  mSM->getSceneNode("Plano")->yaw(Degree(1));
   }
   else if (evt.keysym.sym == SDLK_r) {
-	  plano->sendEvent(DEFAULT, plano);
+	  //plano->sendEvent(DEFAULT, plano);
+	  //removeInputListener(avion);
+	  avion->explode();
   }
   else if (evt.keysym.sym == SDLK_1) {
 	  sinbad->arma();
@@ -348,6 +350,14 @@ void IG2App::setupScene(void)
 	mSM->getSceneNode("Avion")->setPosition({ -300,200,0 });
 	avion = new Avion(nodoAvion);
 	addInputListener(avion);
+
+	BillboardSet* bbSet = mSM->createBillboardSet("Niebla", 3);
+	bbSet->setDefaultDimensions(700, 500);
+	bbSet->setMaterialName("IG2App/Niebla");
+	nodoPlano->attachObject(bbSet);
+	Billboard* bb = bbSet->createBillboard(Vector3(200, 200, 200));
+	Billboard* bb1 = bbSet->createBillboard(Vector3(100, 200, 200));
+	Billboard* bb2 = bbSet->createBillboard(Vector3(300, 200, 200));
  
   //------------------------------------------------------------------------
   mCamMgr = new OgreBites::CameraMan(mCamNode);

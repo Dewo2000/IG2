@@ -50,6 +50,10 @@ Avion::Avion(SceneNode* node)
 	ParticleSystem* pSys = mSM -> createParticleSystem("psSmoke", "IG2App/Smoke");
 	pSys->setEmitting(true);
 	mNode->attachObject(pSys);
+
+	pSysExplode = mSM->createParticleSystem("psExplode", "IG2App/Explode");
+	pSysExplode->setEmitting(false);
+	mNode->createChildSceneNode("psyshumo")->attachObject(pSysExplode);
 }
 
 void Avion::frameRendered(const Ogre::FrameEvent& evt)
@@ -60,4 +64,12 @@ void Avion::frameRendered(const Ogre::FrameEvent& evt)
 
 	aspanave1->girarAspas();
 	aspanave2->girarAspas();
+	pSysExplode->setEmitting(false);
+}
+
+void Avion::explode()
+{
+	pSysExplode->setEmitting(true);	
+	mNode->setVisible(false);
+	mSM->getSceneNode("psyshumo")->setVisible(true);
 }
