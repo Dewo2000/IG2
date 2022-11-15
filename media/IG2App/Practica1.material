@@ -226,3 +226,18 @@ material Practica1/BrazoDron
         }
     }
 }
+material Practica1/10points
+{
+    technique
+    { 
+        pass 
+        { 
+        lighting off
+        texture_unit
+        {
+        texture 10points.png
+        tex_address_mode clamp
+        }
+        }
+    }
+}

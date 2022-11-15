@@ -51,6 +51,8 @@ protected:
   std::vector<SceneNode*> dronVector;
   SceneNode* tierraFake;
   OgreBites::ParamsPanel* panel;
+
+  
 };
 
 #endif

@@ -40,6 +40,12 @@ Avion::Avion(SceneNode* node)
 	aspanave2 = new AspasNave(mNode->createChildSceneNode("AspaNave2"), "AspaNave2", 5);
 	mSM->getSceneNode("AspaNave2")->setScale({ 0.25,0.25,0.25 });
 	mSM->getSceneNode("AspaNave2")->setPosition({ -180,0,50 });
+
+	BillboardSet* bbSet = mSM->createBillboardSet("AvionBS", 1);
+	bbSet->setDefaultDimensions(100, 60);
+	bbSet->setMaterialName("Practica1/10points");
+	mNode->attachObject(bbSet);
+	Billboard* bb = bbSet->createBillboard(Vector3(0, 0, -150));
 }
 
 void Avion::frameRendered(const Ogre::FrameEvent& evt)

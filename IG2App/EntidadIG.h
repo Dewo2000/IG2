@@ -10,6 +10,7 @@
 #include <OgreKeyFrame.h>
 #include <iostream>
 #include <OgreTimer.h>
+#include <OgreBillboardSet.h>
 using namespace Ogre;
 enum MessageType{DEFAULT, EXPLOSION};
 class EntidadIG :public OgreBites::InputListener {
