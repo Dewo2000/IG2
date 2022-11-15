@@ -46,6 +46,10 @@ Avion::Avion(SceneNode* node)
 	bbSet->setMaterialName("Practica1/10points");
 	mNode->attachObject(bbSet);
 	Billboard* bb = bbSet->createBillboard(Vector3(0, 0, -150));
+
+	ParticleSystem* pSys = mSM -> createParticleSystem("psSmoke", "IG2App/Smoke");
+	pSys->setEmitting(false);
+	mNode->attachObject(pSys);
 }
 
 void Avion::frameRendered(const Ogre::FrameEvent& evt)

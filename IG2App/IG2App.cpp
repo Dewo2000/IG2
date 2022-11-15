@@ -151,7 +151,7 @@ void IG2App::setupScene(void)
   
   // and tell it to render into the main window
   Viewport* vp = getRenderWindow()->addViewport(cam);
-  vp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
+  vp->setBackgroundColour(Ogre::ColourValue(0.6, 0.7, 0.8));
 
   //------------------------------------------------------------------------
 
@@ -347,7 +347,7 @@ void IG2App::setupScene(void)
 	mSM->getSceneNode("Avion")->scale({ 0.2,0.2,0.2 });
 	mSM->getSceneNode("Avion")->setPosition({ -300,200,0 });
 	avion = new Avion(nodoAvion);
-	//addInputListener(avion);
+	addInputListener(avion);
  
   //------------------------------------------------------------------------
   mCamMgr = new OgreBites::CameraMan(mCamNode);
