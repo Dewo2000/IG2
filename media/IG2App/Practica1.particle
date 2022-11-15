@@ -41,23 +41,27 @@ particle_system IG2App/Explode
     { // p. s. attributes
         renderer billboard
         billboard_type point
-        particle_width 100
-        particle_height 100
+        particle_width 200
+        particle_height 200
         quota 1000
         material IG2App/Smoke
         emitter Point
         { // e. attributes
             direction 1 0 0
-            angle 0
-            emission_rate 100
+            angle 180
+            emission_rate 20
             time_to_live 2
             velocity_min 10
             velocity_max 10
-            colour 0 0 0 1
+            repeat_delay 10000
+            colour 0.2 0.2 0.2 0.5
         }
         affector ColourFader
         { // a. attributes
-            alpha -0.5
+            red 0.2
+            green 0.2
+            blue 0.2
+            alpha -0.2
         }
         affector Rotator // the texture
         { // a. attributes

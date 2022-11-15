@@ -13,6 +13,7 @@
 #include <OgreBillboardSet.h>
 #include <OgreParticleSystem.h>
 #include <OgreRibbonTrail.h>
+#include <OgreParticleEmitter.h>
 using namespace Ogre;
 enum MessageType{DEFAULT, EXPLOSION};
 class EntidadIG :public OgreBites::InputListener {

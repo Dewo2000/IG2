@@ -58,7 +58,7 @@ bool IG2App::keyPressed(const OgreBites::KeyboardEvent& evt)
   }
   else if (evt.keysym.sym == SDLK_r) {
 	  //plano->sendEvent(DEFAULT, plano);
-	  //removeInputListener(avion);
+	  removeInputListener(avion);
 	  avion->explode();
   }
   else if (evt.keysym.sym == SDLK_1) {

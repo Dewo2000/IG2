@@ -64,12 +64,13 @@ void Avion::frameRendered(const Ogre::FrameEvent& evt)
 
 	aspanave1->girarAspas();
 	aspanave2->girarAspas();
-	pSysExplode->setEmitting(false);
+	
 }
 
 void Avion::explode()
 {
-	pSysExplode->setEmitting(true);	
+	pSysExplode->setEmitting(true);
+	pSysExplode->getEmitter(0)->setDuration(1);
 	mNode->setVisible(false);
 	mSM->getSceneNode("psyshumo")->setVisible(true);
 }
