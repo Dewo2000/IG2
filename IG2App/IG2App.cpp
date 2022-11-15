@@ -60,6 +60,7 @@ bool IG2App::keyPressed(const OgreBites::KeyboardEvent& evt)
 	  //plano->sendEvent(DEFAULT, plano);
 	  removeInputListener(avion);
 	  avion->explode();
+	  avion->sendEvent(EXPLOTION, avion);
   }
   else if (evt.keysym.sym == SDLK_1) {
 	  sinbad->arma();
@@ -77,7 +78,7 @@ bool IG2App::keyPressed(const OgreBites::KeyboardEvent& evt)
 	  sinbad->danceOrGo();
   }
   else if (evt.keysym.sym == SDLK_t) {
-	  plano->sendEvent(EXPLOSION, plano);
+	  plano->sendEvent(STOP, plano);
   }
   
   return true;
@@ -330,6 +331,7 @@ void IG2App::setupScene(void)
 	sinbad = new Sinbad(nodoSinbad);
 	sinbad->setStatic();
 	sinbad->arma();
+	EntidadIG::addListener(sinbad);
 	addInputListener(sinbad);
 
 	SceneNode* nodoNoria = mSM->getRootSceneNode()->createChildSceneNode("Noria");
@@ -349,15 +351,16 @@ void IG2App::setupScene(void)
 	mSM->getSceneNode("Avion")->scale({ 0.2,0.2,0.2 });
 	mSM->getSceneNode("Avion")->setPosition({ -300,200,0 });
 	avion = new Avion(nodoAvion);
+	EntidadIG::addListener(avion);
 	addInputListener(avion);
 
-	BillboardSet* bbSet = mSM->createBillboardSet("Niebla", 3);
-	bbSet->setDefaultDimensions(700, 500);
-	bbSet->setMaterialName("IG2App/Niebla");
-	nodoPlano->attachObject(bbSet);
-	Billboard* bb = bbSet->createBillboard(Vector3(200, 200, 200));
-	Billboard* bb1 = bbSet->createBillboard(Vector3(100, 200, 200));
-	Billboard* bb2 = bbSet->createBillboard(Vector3(300, 200, 200));
+	//BillboardSet* bbSet = mSM->createBillboardSet("Niebla", 3);
+	//bbSet->setDefaultDimensions(700, 500);
+	//bbSet->setMaterialName("IG2App/Niebla");
+	//nodoPlano->attachObject(bbSet);
+	//Billboard* bb = bbSet->createBillboard(Vector3(200, 200, 200));
+	//Billboard* bb1 = bbSet->createBillboard(Vector3(100, 200, 200));
+	//Billboard* bb2 = bbSet->createBillboard(Vector3(300, 200, 200));
  
   //------------------------------------------------------------------------
   mCamMgr = new OgreBites::CameraMan(mCamNode);

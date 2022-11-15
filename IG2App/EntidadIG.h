@@ -15,7 +15,7 @@
 #include <OgreRibbonTrail.h>
 #include <OgreParticleEmitter.h>
 using namespace Ogre;
-enum MessageType{DEFAULT, EXPLOSION};
+enum MessageType{DEFAULT, STOP , EXPLOTION};
 class EntidadIG :public OgreBites::InputListener {
 public:
 	//Constructora y destructora

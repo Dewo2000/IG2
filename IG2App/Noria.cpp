@@ -48,5 +48,6 @@ void Noria::frameRendered(const Ogre::FrameEvent& evt)
 
 void Noria::receiveEvent(MessageType msgType, EntidadIG* entidad)
 {
+	if(msgType==DEFAULT)
 	active = !active;
 }

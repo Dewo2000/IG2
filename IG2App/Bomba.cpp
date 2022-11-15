@@ -39,6 +39,11 @@ Bomba::Bomba(SceneNode* node)
 	animationState = mSM->createAnimationState("animVV");
 	animationState->setLoop(true);
 	animationState->setEnabled(true);
+
+
+	pSysExplode = mSM->createParticleSystem("psBombaExplode", "IG2App/BarrelExplode");
+	pSysExplode->setEmitting(false);
+	mNode->createChildSceneNode("psyBombaExplode")->attachObject(pSysExplode);
 }
 
 void Bomba::frameRendered(const Ogre::FrameEvent& evt)
@@ -48,5 +53,16 @@ void Bomba::frameRendered(const Ogre::FrameEvent& evt)
 
 void Bomba::receiveEvent(MessageType msgType, EntidadIG* entidad)
 {
-	if(msgType==EXPLOSION)animationState->setEnabled(false);
+	if (msgType == STOP) {
+		animationState->setEnabled(false);
+		//explode();
+	}
+}
+
+void Bomba::explode()
+{
+	pSysExplode->setEmitting(true);
+	pSysExplode->getEmitter(0)->setDuration(1);
+	mNode->setVisible(false);
+	mSM->getSceneNode("psyBombaExplode")->setVisible(true);
 }

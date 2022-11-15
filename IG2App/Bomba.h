@@ -7,7 +7,9 @@ public:
 	~Bomba(){}
 	virtual void frameRendered(const Ogre::FrameEvent& evt);
 	virtual void receiveEvent(MessageType msgType, EntidadIG* entidad);
+	void explode();
 protected:
 	AnimationState* animationState;
+	ParticleSystem* pSysExplode;
 };
 

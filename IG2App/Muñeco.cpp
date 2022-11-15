@@ -69,6 +69,7 @@ Muñeco::~Muñeco()
 
 void Muñeco::receiveEvent(MessageType msgType, EntidadIG* entidad)
 {
+	if (msgType != DEFAULT)return;
 	active = !active;
 	if (active)
 	{

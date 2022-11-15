@@ -27,7 +27,7 @@ void Plano::receiveEvent(MessageType msgType, EntidadIG* entidad)
 	else{
 		entPlane->setMaterialName("Practica1/Agua");
 	}*/
-	if (msgType == EXPLOSION) {
+	if (msgType == STOP) {
 		messageReceived = true;
 		time = myTimer->getMilliseconds();
 	}
