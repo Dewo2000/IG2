@@ -1,0 +1,228 @@
+material Practica1/Rojo
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 1.0 0 0
+        }
+    }
+}
+material Practica1/Naranja 
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 1.0 0.7 0
+        }
+    }
+}
+material Practica1/Cian 
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 0 1 1
+        }
+    }
+}
+material Practica1/Naranjon
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 1.0 0.5 0
+        }
+    }
+}
+material Practica1/Amarillo 
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 0.95 0.79 0.29
+        }
+    }
+}
+material Practica1/Marron 
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 0.59 0.25 0
+        }
+    }
+}
+material Practica1/MunecoCabeza 
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 0.5 0.5 0.5
+        texture_unit
+        {
+        texture spotlight_image.png
+        env_map spherical
+        colour_op add
+        }
+        }
+    }
+}
+material Practica1/MunecoCuerpo
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 0.5 0.5 0.5
+        texture_unit
+        {
+        texture checker.png
+        colour_op add
+        env_map spherical
+        }
+        }
+    }
+}
+material Practica1/checker
+{
+    technique
+    { 
+        pass 
+        { 
+        texture_unit
+        {
+        texture checker.png
+        colour_op modulate
+        }
+        }
+    }
+}
+material Practica1/MunecoCabezaR
+{
+    technique
+    { 
+        pass 
+        { 
+        
+        diffuse 1 0 0
+        texture_unit
+        {
+        texture spotlight_image.png
+        env_map spherical
+        colour_op modulate
+        }
+        }
+    }
+}
+material Practica1/MunecoCuerpoR
+{
+    technique
+    { 
+        pass 
+        { 
+        diffuse 1 0 0
+        texture_unit
+        {
+        texture checker.png
+        colour_op modulate
+        env_map spherical
+        }
+        }
+    }
+}
+material Practica1/Agua 
+{
+    technique 
+    { 
+        pass 
+        { 
+        diffuse 0.8 0.8 0.8
+        texture_unit 
+        {
+        texture Water02.jpg
+        colour_op add
+        scroll_anim 0.1 0.0
+        }
+        }
+    }
+}
+material Practica1/AguaEstancada
+{
+    technique 
+    { 
+        pass 
+        { 
+        diffuse 0.8 0.8 0.8
+        texture_unit 
+        {
+        texture Water02.jpg
+        colour_op add
+        }
+        }
+    }
+}
+material Practica1/Cubo
+{
+    technique 
+    { 
+        pass 
+        { 
+        diffuse 0.5 0.5 0.5
+        texture_unit 
+        {
+        texture BumpyMetal.jpg
+        colour_op add
+        }
+        }
+    }
+}
+material Practica1/Cilindro
+{
+    technique 
+    { 
+        pass 
+        { 
+        texture_unit 
+        {
+        texture BeachStones.jpg
+        colour_op modulate
+        }
+        }
+    }
+}
+material Practica1/dirt01
+{
+    technique 
+    { 
+        pass 
+        { 
+        texture_unit 
+        {
+        texture dirt01.jpg
+        colour_op modulate
+        }
+        }
+    }
+}
+material Practica1/BrazoDron
+{
+    technique 
+    { 
+        pass 
+        { 
+        diffuse 0.95 0.79 0.29
+        texture_unit 
+        {
+        texture BumpyMetal.jpg
+        colour_op add
+        }
+        }
+    }
+}
