@@ -13,6 +13,7 @@ public:
 	void cambiaEspada();
 	void danceOrGo();
 	void setStatic() { isStatic = true; }
+	void die();
 protected:
 	//AnimationState* animationState;
 	//virtual bool keyPressed(const OgreBites::KeyboardEvent& evt);

@@ -150,3 +150,28 @@ void Sinbad::danceOrGo()
 		vAnimations[2]->setEnabled(false);
 	}
 }
+
+void Sinbad::die()
+{
+	for (AnimationState* a : vAnimations)a->setEnabled(false);
+	double duracion = 1.0;
+	Animation* animation = mSM->createAnimation("SimbadDie", duracion);
+	NodeAnimationTrack* track = animation->createNodeTrack(0);
+	track->setAssociatedNode(mNode);
+	Vector3 keyframePos0(0, 0, 0); // Posicion inicial
+	Vector3 keyframePos = mNode->getAutoTrackLocalDirection(); //= keyframePos0;
+	TransformKeyFrame* kf; // 7 keyFrames:
+	// Keyframe 0: origen
+	kf = track->createNodeKeyFrame(0.0);
+	kf->setTranslate(keyframePos); // Origen: Vector3
+	// Keyframe 1: 
+	kf = track->createNodeKeyFrame(1.0);
+	Quaternion q1 = Quaternion(Degree(-90), Vector3(1, 0, 0));
+	kf->setRotation(q1); // Yaw(120) 
+	keyframePos = Vector3(0, -30, 0);
+	kf->setTranslate(keyframePos);
+	AnimationState* sinbaddie = mSM->createAnimationState("SimbadDie");
+	sinbaddie->setEnabled(true);
+	sinbaddie->setLoop(false);
+	vAnimations.push_back(sinbaddie);
+}

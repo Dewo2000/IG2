@@ -61,6 +61,7 @@ bool IG2App::keyPressed(const OgreBites::KeyboardEvent& evt)
 	  removeInputListener(avion);
 	  avion->explode();
 	  avion->sendEvent(EXPLOTION, avion);
+	  sinbad->die();
   }
   else if (evt.keysym.sym == SDLK_1) {
 	  sinbad->arma();
