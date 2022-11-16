@@ -40,10 +40,12 @@ Sinbad::Sinbad(SceneNode* node)
 
 void Sinbad::receiveEvent(MessageType msgType, EntidadIG* entidad)
 {
-	if (msgType != PLANE_EXPLOTION)return;
-	diemsg = true;
-	diemsgcount = myTimer->getMilliseconds();
-	die();
+	if (msgType == PLANE_EXPLOTION && !died) {
+		died = true;
+		diemsg = true;
+		diemsgcount = myTimer->getMilliseconds();
+		die();
+	}
 }
 
 void Sinbad::frameRendered(const Ogre::FrameEvent& evt)

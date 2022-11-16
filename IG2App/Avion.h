@@ -11,5 +11,6 @@ public:
 protected:
 	AspasNave* aspanave1, * aspanave2;
 	ParticleSystem* pSysExplode;
+	bool exploted = false;
 };
 

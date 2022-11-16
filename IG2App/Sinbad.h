@@ -27,4 +27,5 @@ protected:
 	Ogre::Timer* myTimer;
 	Entity* sinbadEnt, *rightSword,*leftSword;
 	bool diemsg=false;
+	bool died = false;
 };

@@ -285,7 +285,7 @@ void IG2App::setupScene(void)
   panel->setAllParamValues({ std::to_string(dronVector.size()) });*/
   //------------------------------------------------------------------------
 
-	vp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
+	/*vp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
 	Entity* ent = mSM->createEntity("sphere.mesh");
 	ent->setMaterialName("Practica1/Cian");
 	SceneNode* Planeta = mSM->getRootSceneNode()->createChildSceneNode("Planeta");
@@ -297,75 +297,75 @@ void IG2App::setupScene(void)
 	mSM->getSceneNode("Sinbad")->scale({ 10,10,10 });
 	mSM->getSceneNode("Sinbad")->setPosition({ 0,350,0 });
 	sinbad = new Sinbad(nodoSinbad);
-	addInputListener(sinbad);
+	addInputListener(sinbad);*/
 
 	//------------------------------------------------------------------------
 
-	//SceneNode* nodoBomba = mSM->getRootSceneNode()->createChildSceneNode("Bomba");
-	//mSM->getSceneNode("Bomba")->setPosition({ 0,0,0 });
-	//bomba = new Bomba(nodoBomba);
-	//mSM->getSceneNode("Bomba")->setScale({ 100,100,100 });
-	//addInputListener(bomba);
-	//EntidadIG::addListener(bomba);
+	SceneNode* nodoBomba = mSM->getRootSceneNode()->createChildSceneNode("Bomba");
+	mSM->getSceneNode("Bomba")->setPosition({ 0,0,0 });
+	bomba = new Bomba(nodoBomba);
+	mSM->getSceneNode("Bomba")->setScale({ 100,100,100 });
+	addInputListener(bomba);
+	EntidadIG::addListener(bomba);
 
-	//SceneNode* nodoPlano = mSM->getRootSceneNode()->createChildSceneNode("Plano");
-	//plano = new Plano(nodoPlano);
-	//EntidadIG::addListener(plano);
-	//addInputListener(plano);
+	SceneNode* nodoPlano = mSM->getRootSceneNode()->createChildSceneNode("Plano");
+	plano = new Plano(nodoPlano);
+	EntidadIG::addListener(plano);
+	addInputListener(plano);
 
-	///*MeshManager::getSingleton().createPlane("mPlane1080x800", ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
-	//	Plane(Vector3::UNIT_Y, 0), 1080, 800, 100, 80, true, 1, 1.0, 1.0, Vector3::UNIT_Z);*/
-	//Entity* platRoja = mSM->createEntity("mPlane1080x800");
-	//platRoja->setMaterialName("Practica1/Rojo");
-	//SceneNode* nodoPlatRoja= mSM->getRootSceneNode()->createChildSceneNode("PlatRoja");
-	//nodoPlatRoja->attachObject(platRoja);
-	//nodoPlatRoja->setScale(0.3, 0.3, 0.3);
-	//nodoPlatRoja->setPosition(380, 1, -282);
+	/*MeshManager::getSingleton().createPlane("mPlane1080x800", ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
+		Plane(Vector3::UNIT_Y, 0), 1080, 800, 100, 80, true, 1, 1.0, 1.0, Vector3::UNIT_Z);*/
+	Entity* platRoja = mSM->createEntity("mPlane1080x800");
+	platRoja->setMaterialName("Practica1/Rojo");
+	SceneNode* nodoPlatRoja= mSM->getRootSceneNode()->createChildSceneNode("PlatRoja");
+	nodoPlatRoja->attachObject(platRoja);
+	nodoPlatRoja->setScale(0.3, 0.3, 0.3);
+	nodoPlatRoja->setPosition(380, 1, -282);
 
-	//Entity* platAmarilla = mSM->createEntity("mPlane1080x800");
-	//platAmarilla->setMaterialName("Practica1/Amarillo");
-	//SceneNode* nodoPlatAmarilla = mSM->getRootSceneNode()->createChildSceneNode("PlatAmarilla");
-	//nodoPlatAmarilla->attachObject(platAmarilla);
-	//nodoPlatAmarilla->setScale(0.3, 0.3, 0.3);
-	//nodoPlatAmarilla->setPosition(-380, 1, 282);
+	Entity* platAmarilla = mSM->createEntity("mPlane1080x800");
+	platAmarilla->setMaterialName("Practica1/Amarillo");
+	SceneNode* nodoPlatAmarilla = mSM->getRootSceneNode()->createChildSceneNode("PlatAmarilla");
+	nodoPlatAmarilla->attachObject(platAmarilla);
+	nodoPlatAmarilla->setScale(0.3, 0.3, 0.3);
+	nodoPlatAmarilla->setPosition(-380, 1, 282);
 
-	//SceneNode* nodoSinbad = mSM->getRootSceneNode()->createChildSceneNode("Sinbad");
-	//mSM->getSceneNode("Sinbad")->scale({ 10,10,10 });
-	//mSM->getSceneNode("Sinbad")->setPosition({ -300,50,300 });
-	//sinbad = new Sinbad(nodoSinbad);
-	//sinbad->setStatic();
-	//sinbad->arma();
-	//sinbad->setRunAnimation();
-	//EntidadIG::addListener(sinbad);
-	//addInputListener(sinbad);
+	SceneNode* nodoSinbad = mSM->getRootSceneNode()->createChildSceneNode("Sinbad");
+	mSM->getSceneNode("Sinbad")->scale({ 10,10,10 });
+	mSM->getSceneNode("Sinbad")->setPosition({ -300,50,300 });
+	sinbad = new Sinbad(nodoSinbad);
+	sinbad->setStatic();
+	sinbad->arma();
+	sinbad->setRunAnimation();
+	EntidadIG::addListener(sinbad);
+	addInputListener(sinbad);
 
-	//SceneNode* nodoNoria = mSM->getRootSceneNode()->createChildSceneNode("Noria");
-	//nodoNoria->setPosition(380, 0, -380);
-	//noria = new Noria(nodoNoria, 12);
-	//EntidadIG::addListener(noria);
-	//addInputListener(noria);
+	SceneNode* nodoNoria = mSM->getRootSceneNode()->createChildSceneNode("Noria");
+	nodoNoria->setPosition(380, 0, -380);
+	noria = new Noria(nodoNoria, 12);
+	EntidadIG::addListener(noria);
+	addInputListener(noria);
 
-	//SceneNode* nodoMuñeco = mSM->getRootSceneNode()->createChildSceneNode("Muñeco");
-	//nodoMuñeco->setScale(0.2, 0.2, 0.2);
-	//nodoMuñeco->setPosition(500, 20, -200);
-	//muñeco = new Muñeco(nodoMuñeco);
-	//EntidadIG::addListener(muñeco);
-	//addInputListener(muñeco);
+	SceneNode* nodoMuñeco = mSM->getRootSceneNode()->createChildSceneNode("Muñeco");
+	nodoMuñeco->setScale(0.2, 0.2, 0.2);
+	nodoMuñeco->setPosition(500, 20, -200);
+	muñeco = new Muñeco(nodoMuñeco);
+	EntidadIG::addListener(muñeco);
+	addInputListener(muñeco);
 
-	//SceneNode* nodoAvion = mSM->getRootSceneNode()->createChildSceneNode("Avion");
-	//mSM->getSceneNode("Avion")->scale({ 0.2,0.2,0.2 });
-	//mSM->getSceneNode("Avion")->setPosition({ -300,200,0 });
-	//avion = new Avion(nodoAvion);
-	//EntidadIG::addListener(avion);
-	//addInputListener(avion);
+	SceneNode* nodoAvion = mSM->getRootSceneNode()->createChildSceneNode("Avion");
+	mSM->getSceneNode("Avion")->scale({ 0.2,0.2,0.2 });
+	mSM->getSceneNode("Avion")->setPosition({ -300,200,0 });
+	avion = new Avion(nodoAvion);
+	EntidadIG::addListener(avion);
+	addInputListener(avion);
 
-	//BillboardSet* bbSet = mSM->createBillboardSet("Niebla", 3);
-	//bbSet->setDefaultDimensions(700, 500);
-	//bbSet->setMaterialName("IG2App/Niebla");
-	//nodoPlano->attachObject(bbSet);
-	//Billboard* bb = bbSet->createBillboard(Vector3(200, 200, 200));
-	//Billboard* bb1 = bbSet->createBillboard(Vector3(100, 200, 200));
-	//Billboard* bb2 = bbSet->createBillboard(Vector3(300, 200, 200));
+	BillboardSet* bbSet = mSM->createBillboardSet("Niebla", 3);
+	bbSet->setDefaultDimensions(700, 500);
+	bbSet->setMaterialName("IG2App/Niebla");
+	nodoPlano->attachObject(bbSet);
+	Billboard* bb = bbSet->createBillboard(Vector3(200, 200, 200));
+	Billboard* bb1 = bbSet->createBillboard(Vector3(100, 200, 200));
+	Billboard* bb2 = bbSet->createBillboard(Vector3(300, 200, 200));
  
   //------------------------------------------------------------------------
   mCamMgr = new OgreBites::CameraMan(mCamNode);

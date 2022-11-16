@@ -59,6 +59,7 @@ void Bomba::receiveEvent(MessageType msgType, EntidadIG* entidad)
 	
 	}
 	else if (msgType == SIMBAD_DIE) {
+		if(!exploted)
 		explode();
 	}
 }
