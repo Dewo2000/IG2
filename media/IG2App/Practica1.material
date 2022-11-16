@@ -277,3 +277,24 @@ material IG2App/Smoke
         }
     }
 }
+material IG2App/space
+{
+        technique
+        {
+            pass
+            {
+                texture_unit
+                {
+                    
+                    texture spheremap.png
+                    colour_op add
+                }
+                 texture_unit
+                {
+                    texture spacesky.jpg
+                    rotate_anim 0.1
+                    colour_op modulate
+                }
+        }
+    }
+}

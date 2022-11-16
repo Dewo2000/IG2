@@ -38,21 +38,11 @@ protected:
   Ogre::SceneNode* mSinbadNode = nullptr;
   OgreBites::CameraMan* mCamMgr = nullptr;
 
-  AspaNoria* aspa = nullptr;
   Noria* noria = nullptr;
-  Muñeco* muñeco = nullptr;
   Plano* plano = nullptr;
   Avion* avion = nullptr;
-  Dron* dron = nullptr;
-
   Sinbad* sinbad = nullptr;
   Bomba* bomba = nullptr;
-
-  std::vector<SceneNode*> dronVector;
-  SceneNode* tierraFake;
-  OgreBites::ParamsPanel* panel;
-
-  
 };
 
 #endif
