@@ -4,10 +4,12 @@ Bomba::Bomba(SceneNode* node)
 {
 	mNode = node;
 	mSM = mNode->getCreator();
-	Entity* ent = mSM->createEntity("Barrel.mesh");
-	ent->setMaterialName("Practica1/checker");
+	Entity* ent = mSM->createEntity("uv_sphere.mesh");
+	ent->setMaterialName("IG2/bomba");
+	//Entity* ent = mSM->createEntity("Barrel.mesh");
+	//ent->setMaterialName("Practica1/checker");
 	mNode->attachObject(ent);
-	mNode->setScale(10, 10, 10);
+	//mNode->setScale(10, 10, 10);
 	mNode->setInitialState();
 	
 

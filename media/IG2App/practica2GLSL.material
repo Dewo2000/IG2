@@ -1,0 +1,25 @@
+vertex_program MyFirstShaderVS glsl
+{
+    // nombre del archivo del código
+    source MyFirstShaderVS.glsl 
+    // valores para las variable uniform
+    default_params 
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program MyFirstShaderFS glsl
+{
+    source MyFirstShaderFS.glsl // nombre del archivo del código
+    // valores para las variable uniform
+    default_params 
+    {
+        // 1º unidad de textura -> *
+        //param_named texturaL int 0 
+        // 2º unidad de textura -> *
+        //param_named texturaM int 1 
+        param_named BF float 0.5
+        param_named intLuzAmb float 1.0
+    }
+}

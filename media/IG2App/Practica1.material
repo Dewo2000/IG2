@@ -286,7 +286,7 @@ material IG2App/space
                 texture_unit
                 {
                     
-                    texture spheremap.png
+                    texture lightMap.jpg
                     colour_op add
                 }
                  texture_unit
@@ -297,4 +297,25 @@ material IG2App/space
                 }
         }
     }
+}
+material IG2/bomba {
+    technique {
+        pass {
+            vertex_program_ref MyFirstShaderVS
+            { // params ‐> default_paramss
+            }
+            fragment_program_ref MyFirstShaderFS
+            { // params ‐> default_params
+            }
+            /*  texture_unit { // * ‐> int 0
+            texture ejemploA.jpg 2d // archivo
+            tex_address_mode clamp // sólo configuración
+            filtering bilinear // de acceso al texel
+            }
+            texture_unit { // * ‐> int 1
+            texture ejemploB.jpg 2d // archivo
+            tex_address_mode wrap // sólo configuración
+            }  */
+        } 
+    } 
 }
