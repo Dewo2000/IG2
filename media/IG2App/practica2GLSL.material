@@ -13,7 +13,7 @@ fragment_program SpaceSkyFS glsl
     {
         param_named texturaL int 0
         param_named texturaM int 1 
-        param_named_auto BF float 0.5
+        param_named BF float 0
         param_named intLuzAmb float 1.0
     }
 }
@@ -29,6 +29,7 @@ fragment_program MyFirstShaderFS glsl
 {
     source MyFirstShaderFS.glsl  
 }
+
 vertex_program BombaTeseladaVS glsl 
 {
     source BombaTeseladaVS.glsl 
@@ -40,8 +41,16 @@ vertex_program BombaTeseladaVS glsl
 fragment_program BombaTeseladaFS glsl
 {
     source BombaTeseladaFS.glsl  
+     default_params 
+    {
+        param_named texturaL int 0
+        param_named texturaM int 1 
+        param_named texturaX int 2
+        param_named BF float 0
+        param_named intLuzAmb float 1.0
+    }
 }
-material IG2App/SpaceSKY 
+material IG2/SpaceSKY 
 {
     technique 
     {
@@ -65,7 +74,7 @@ material IG2App/SpaceSKY
         } 
     } 
 }
-material IG2App/bomba 
+material IG2/bomba 
 {
     technique 
     {
@@ -80,32 +89,78 @@ material IG2App/bomba
         } 
     } 
 }
-material IG2App/bomba2
+material IG2/bomba2
 {
     technique 
     {
         pass 
         {
-            vertex_program_ref BombaTeseladaFS
+            vertex_program_ref BombaTeseladaVS
             { 
             }
             fragment_program_ref BombaTeseladaFS
             { 
             }
             texture_unit { 
-                texture checker.png 2d // archivo
+                texture BumpyMetal.jpg 2d // archivo
                 tex_address_mode clamp // sólo configuración
                 filtering bilinear // de acceso al texel
             }
             texture_unit { 
-                texture BeachStones.jpg 2d 
+                texture spacesky.jpg 2d 
                 tex_address_mode wrap 
+              
             }
             texture_unit { 
-                texture BumpyMetal.jpg 2d 
+                texture checker.png 2d 
                 tex_address_mode wrap 
             }
         } 
     } 
 }
 
+
+vertex_program SpaceVS glsl 
+{
+    source SpaceVS.glsl 
+    default_params
+    {
+     param_named_auto modelViewProjMat worldviewproj_matrix
+     param_named ZF float 0.5
+    }
+}
+fragment_program SpaceFS glsl
+{
+    source SpaceFS.glsl  
+    default_params 
+    {
+        param_named texturaL int 0
+        param_named texturaM int 1 
+        param_named BF float 0
+        param_named intLuzAmb float 1.0
+    }
+}
+material IG2/Space
+{
+    technique 
+    {
+        pass 
+        {
+            vertex_program_ref SpaceVS
+            { 
+            }
+            fragment_program_ref SpaceFS
+            { 
+            }
+            texture_unit { 
+                texture spacesky.jpg 2d // archivo
+                tex_address_mode clamp // sólo configuración
+                filtering bilinear // de acceso al texel
+            }
+            texture_unit { 
+                texture lightMap.jpg 2d 
+                tex_address_mode wrap 
+            }
+        } 
+    } 
+}

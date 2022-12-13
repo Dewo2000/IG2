@@ -8,8 +8,15 @@ uniform float intLuzAmb;
 in vec2 vUv0; 
 
 void main(){
-    vec3 colorL = vec3(texture(texturaL, vUv0)); 
-    vec3 colorM = vec3(texture(texturaM, vUv0));
-    vec3 color = mix(colorL,colorM,colorX, BF) * intLuzAmb;
+    vec3 colorC = vec3(texture(texturaX, vUv0)).rgb;
+    vec3 colorL;
+    if(colorC == vec3(0,0,0)){
+        colorL = vec3(texture(texturaL, vUv0)); 
+    }
+    else{
+        colorL = vec3(texture(texturaM, vUv0));
+    }
+    vec3 colorX = vec3(texture(texturaX, vUv0));
+    vec3 color = mix(colorL,colorX, BF) * intLuzAmb;
     fFragColor = vec4(color,1.0);
 }
