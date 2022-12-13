@@ -9,6 +9,8 @@ uniform mat4 normalMat;
 uniform vec3 lightDiffuse;
 uniform vec4 lightPosition;
 uniform vec3 materialDiffuse;
+uniform sampler2D texBack; 
+uniform sampler2D texFront; 
 
 out vec2 vUv0;
 out vec3 vFrontColor;
@@ -26,10 +28,10 @@ void main() {
     vec3 viewNormal = normalize(vec3(normalMat * vec4(normal,0)));
     vec3 diffuse = diff(viewVertex, viewNormal) *
     lightDiffuse * materialDiffuse;
-    vFrontColor = diffuse * vec3(0.72,0.57,0.35);
+    vFrontColor = diffuse * vec3(0.72,0.57,0.35) * texture(texFront,uv0).rgb;
     diffuse = diff(viewVertex, -viewNormal) *
     lightDiffuse * materialDiffuse;
-    vBackColor = diffuse * vec3(0.0,0.6,0.83); 
+    vBackColor = diffuse * vec3(0.0,0.6,0.83)* texture(texBack,uv0).rgb; 
     vUv0 = uv0; 
     gl_Position = modelViewProjMat * vertex; 
 }

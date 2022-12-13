@@ -227,6 +227,8 @@ vertex_program HolesAndVertexLightingVS glsl
      param_named_auto lightDiffuse light_diffuse_colour 0
      param_named_auto lightPosition light_position 0
      param_named_auto materialDiffuse surface_diffuse_colour
+     param_named texFront int 0
+     param_named texBack int 1 
      //param_named materialDiffuse float3 1 1 1 
     }
 }
@@ -235,8 +237,6 @@ fragment_program HolesAndVertexLightingFS glsl
     source HolesAndVertexLightingFS.glsl
     default_params 
     {
-        param_named texFront int 0
-        param_named texBack int 1 
         param_named checkTex int 2
         param_named BF float 0
         param_named intLuzAmb float 1.0
