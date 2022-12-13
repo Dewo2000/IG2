@@ -346,8 +346,6 @@ fragment_program SpotLightFS glsl
     source SpotLightFS.glsl
     default_params 
     {  
-        param_named_auto normalMat inverse_transpose_view_matrix
-        param_named_auto lightPosition light_position 1
         param_named textureM int 0
         param_named BF float 0
         param_named intLuzAmb float 1.0
