@@ -1,25 +1,34 @@
-vertex_program MyFirstShaderVS glsl
+vertex_program SpaceSkyVS glsl 
 {
-    // nombre del archivo del código
-    source MyFirstShaderVS.glsl 
-    // valores para las variable uniform
-    default_params 
+    source SpaceSkyVS.glsl 
+    default_params
     {
-        param_named_auto modelViewProjMat worldviewproj_matrix
+    param_named_auto modelViewProjMat worldviewproj_matrix
     }
 }
-
-fragment_program MyFirstShaderFS glsl
+fragment_program SpaceSkyFS glsl
 {
-    source MyFirstShaderFS.glsl // nombre del archivo del código
-    // valores para las variable uniform
+    source SpaceSkyFS.glsl  
     default_params 
     {
-        // 1º unidad de textura -> *
-        //param_named texturaL int 0 
-        // 2º unidad de textura -> *
-        //param_named texturaM int 1 
-        param_named BF float 0.5
-        param_named intLuzAmb float 1.0
+        param_named texturaL int 0
+        param_named texturaM int 1 
+        param_named_auto BF time_0_1 10
+        param_named intLuzAmb float 2.0
+    }
+}
+vertex_program MyFirstShaderVS glsl 
+{
+    source MyFirstShaderVS.glsl 
+    default_params
+    {
+    param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+fragment_program MyFirstShaderFS glsl
+{
+    source MyFirstShaderFS.glsl  
+    default_params 
+    {
     }
 }

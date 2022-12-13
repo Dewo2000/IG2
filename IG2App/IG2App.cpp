@@ -141,7 +141,7 @@ void IG2App::setupScene(void)
 	nodoSkyPLane->attachObject(skyPlane);
 	nodoPlatAmarilla->setPosition(0, 200, -200);*/
 
-	mSM->setSkyPlane(true, Plane(Vector3::UNIT_Z, -2), "IG2App/space", 0.05, 1, true, 1, 100, 100);
+	mSM->setSkyPlane(true, Plane(Vector3::UNIT_Z, -2), "IG2App/bomba", 0.05, 1, true, 1, 100, 100);
 
  
   //------------------------------------------------------------------------

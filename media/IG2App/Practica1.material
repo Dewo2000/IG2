@@ -298,24 +298,42 @@ material IG2App/space
         }
     }
 }
-material IG2/bomba {
-    technique {
-        pass {
+material IG2App/SpaceSKY 
+{
+    technique 
+    {
+        pass 
+        {
+            vertex_program_ref SpaceSkyVS
+            { 
+            }
+            fragment_program_ref SpaceSkyFS
+            { 
+            }
+            texture_unit { 
+                texture spacesky.jpg 2d // archivo
+                tex_address_mode clamp // sólo configuración
+                filtering bilinear // de acceso al texel
+            }
+            texture_unit { 
+                texture lightMap.jpg 2d 
+                tex_address_mode wrap 
+            }
+        } 
+    } 
+}
+material IG2App/bomba 
+{
+    technique 
+    {
+        pass 
+        {
             vertex_program_ref MyFirstShaderVS
-            { // params ‐> default_paramss
+            { 
             }
             fragment_program_ref MyFirstShaderFS
-            { // params ‐> default_params
+            { 
             }
-            /*  texture_unit { // * ‐> int 0
-            texture ejemploA.jpg 2d // archivo
-            tex_address_mode clamp // sólo configuración
-            filtering bilinear // de acceso al texel
-            }
-            texture_unit { // * ‐> int 1
-            texture ejemploB.jpg 2d // archivo
-            tex_address_mode wrap // sólo configuración
-            }  */
         } 
     } 
 }
