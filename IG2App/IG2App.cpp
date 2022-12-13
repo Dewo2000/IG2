@@ -93,10 +93,10 @@ void IG2App::setupScene(void)
  
 
 	SceneNode* nodoBomba = mSM->getRootSceneNode()->createChildSceneNode("Bomba");
-	mSM->getSceneNode("Bomba")->setPosition({ 0,0,0 });
+	mSM->getSceneNode("Bomba")->setPosition({ 0,100,0 });
 	bomba = new Bomba(nodoBomba);
 	mSM->getSceneNode("Bomba")->setScale({ 100,100,100 });
-	addInputListener(bomba);
+	//addInputListener(bomba);
 	EntidadIG::addListener(bomba);
 	 
 	SceneNode* nodoPlano = mSM->getRootSceneNode()->createChildSceneNode("Plano");
@@ -134,23 +134,14 @@ void IG2App::setupScene(void)
 	EntidadIG::addListener(avion);
 	addInputListener(avion);
 
-
-	/*SceneNode* nodoSkyPLane = mSM->getRootSceneNode()->createChildSceneNode("SkyPlane");
-	Entity* skyPlane = mSM->createEntity("mPlane1080x800");
-	skyPlane->setMaterialName("IG2App/space");
-	nodoSkyPLane->attachObject(skyPlane);
-	nodoPlatAmarilla->setPosition(0, 200, -200);*/
-
 	mSM->setSkyPlane(true, Plane(Vector3::UNIT_Z, -2), "IG2/Space", 0.05, 1, true, 1, 100, 100);
-
  
   //------------------------------------------------------------------------
   mCamMgr = new OgreBites::CameraMan(mCamNode);
   addInputListener(mCamMgr);
   mCamMgr->setStyle(OgreBites::CS_ORBIT);  
   
-  //mCamMgr->setTarget(mSinbadNode);  
-  //mCamMgr->setYawPitchDist(Radian(0), Degree(30), 100);
+
 
   //------------------------------------------------------------------------
 

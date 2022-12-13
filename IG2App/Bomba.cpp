@@ -5,14 +5,14 @@ Bomba::Bomba(SceneNode* node)
 	mNode = node;
 	mSM = mNode->getCreator();
 	Entity* ent = mSM->createEntity("uv_sphere.mesh");
-	ent->setMaterialName("IG2/Holes");
+	ent->setMaterialName("IG2/HolesAndVertexLighting");
 	//Entity* ent = mSM->createEntity("Barrel.mesh");
 	//ent->setMaterialName("Practica1/checker");
 	mNode->attachObject(ent);
 	//mNode->setScale(10, 10, 10);
 	mNode->setInitialState();
 	
-
+	
 	double duracion = 4.0, desplazamiento = 250.0;
 	Animation* animation = mSM->createAnimation("animVV", duracion);
 	NodeAnimationTrack* track = animation->createNodeTrack(0);
