@@ -13,8 +13,8 @@ fragment_program SpaceSkyFS glsl
     {
         param_named texturaL int 0
         param_named texturaM int 1 
-        param_named_auto BF time_0_1 10
-        param_named intLuzAmb float 2.0
+        param_named_auto BF float 0.5
+        param_named intLuzAmb float 1.0
     }
 }
 vertex_program MyFirstShaderVS glsl 
@@ -28,7 +28,84 @@ vertex_program MyFirstShaderVS glsl
 fragment_program MyFirstShaderFS glsl
 {
     source MyFirstShaderFS.glsl  
-    default_params 
+}
+vertex_program BombaTeseladaVS glsl 
+{
+    source BombaTeseladaVS.glsl 
+    default_params
     {
+    param_named_auto modelViewProjMat worldviewproj_matrix
     }
 }
+fragment_program BombaTeseladaFS glsl
+{
+    source BombaTeseladaFS.glsl  
+}
+material IG2App/SpaceSKY 
+{
+    technique 
+    {
+        pass 
+        {
+            vertex_program_ref SpaceSkyVS
+            { 
+            }
+            fragment_program_ref SpaceSkyFS
+            { 
+            }
+            texture_unit { 
+                texture spacesky.jpg 2d // archivo
+                tex_address_mode clamp // sólo configuración
+                filtering bilinear // de acceso al texel
+            }
+            texture_unit { 
+                texture lightMap.jpg 2d 
+                tex_address_mode wrap 
+            }
+        } 
+    } 
+}
+material IG2App/bomba 
+{
+    technique 
+    {
+        pass 
+        {
+            vertex_program_ref MyFirstShaderVS
+            { 
+            }
+            fragment_program_ref MyFirstShaderFS
+            { 
+            }
+        } 
+    } 
+}
+material IG2App/bomba2
+{
+    technique 
+    {
+        pass 
+        {
+            vertex_program_ref BombaTeseladaFS
+            { 
+            }
+            fragment_program_ref BombaTeseladaFS
+            { 
+            }
+            texture_unit { 
+                texture checker.png 2d // archivo
+                tex_address_mode clamp // sólo configuración
+                filtering bilinear // de acceso al texel
+            }
+            texture_unit { 
+                texture BeachStones.jpg 2d 
+                tex_address_mode wrap 
+            }
+            texture_unit { 
+                texture BumpyMetal.jpg 2d 
+                tex_address_mode wrap 
+            }
+        } 
+    } 
+}
+

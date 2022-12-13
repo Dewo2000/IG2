@@ -2,5 +2,5 @@
 in vec4 vertex;
 uniform mat4 modelViewProjMat;
 void main(){
-    gl_Position = modelViewProjMat*vertex;
+    gl_Position = modelViewProjMat * vertex;
 }
