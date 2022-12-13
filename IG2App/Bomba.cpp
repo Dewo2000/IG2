@@ -5,7 +5,7 @@ Bomba::Bomba(SceneNode* node)
 	mNode = node;
 	mSM = mNode->getCreator();
 	Entity* ent = mSM->createEntity("uv_sphere.mesh");
-	ent->setMaterialName("IG2/HolesAndLighting");
+	ent->setMaterialName("IG2/SpotLight");
 	//Entity* ent = mSM->createEntity("Barrel.mesh");
 	//ent->setMaterialName("Practica1/checker");
 	mNode->attachObject(ent);

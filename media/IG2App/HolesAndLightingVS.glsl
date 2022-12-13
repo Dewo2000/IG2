@@ -10,7 +10,7 @@ out vec2 vUv0;
 out vec3 Normal;
 out vec3 viewVertex;
 void main() {
-    vec3 viewVertex = vec3(modelViewMat * vertex);
+    viewVertex = vec3( * vertex);
     Normal = normal;
     vUv0 = uv0; 
     gl_Position = modelViewProjMat * vertex; 
