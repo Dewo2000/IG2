@@ -5,6 +5,7 @@ uniform sampler2D texturaM;
 uniform sampler2D texturaX; 
 uniform float BF; 
 uniform float intLuzAmb; 
+uniform float st;
 in vec2 vUv0; 
 
 void main(){
@@ -14,9 +15,11 @@ void main(){
         colorL = vec3(texture(texturaL, vUv0)); 
     }
     else{
-        colorL = vec3(texture(texturaM, vUv0));
+        float ZF=st*0.25+0.75;  
+        vec2 vUv1 = (vUv0-0.5)*ZF+0.5;
+        colorL = vec3(texture(texturaM, vUv1));
     }
-    vec3 colorX = vec3(texture(texturaX, vUv0));
-    vec3 color = mix(colorL,colorX, BF) * intLuzAmb;
-    fFragColor = vec4(color,1.0);
+    //vec3 colorX = vec3(texture(texturaX, vUv0));
+    //vec3 color = mix(colorL,colorX, BF) * intLuzAmb;
+    fFragColor = vec4(colorL,1.0);
 }
