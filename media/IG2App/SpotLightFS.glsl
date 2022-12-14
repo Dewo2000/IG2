@@ -10,8 +10,9 @@ in vec3 mNormal;
 out vec4 fFragColor; 
 
 void main() {
+    vec3 luzpos = vec3(0,10,0);
     vec3 viewNormal = normalize(vec3(mNormal));
-    float diffuse = dot(viewNormal,normalize(vec3(0,1,0)));
+    float diffuse = dot(viewNormal,normalize(luzpos-viewNormal));
     vec3 colorM =  texture(textureM,vUv0).rgb;
     vec3 color = colorM;
     if(diffuse < cutoff+1){
